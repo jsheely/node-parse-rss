@@ -18,7 +18,11 @@ module.exports = (url,callback) ->
   domain.run ->
 
     ### Module Initialize ###
-    req = request url
+    req = request(
+      url: url
+      headers:
+        'User-Agent': 'request'
+    )
     feedParser = new FeedParser([options])
 
     ### REQUEST ###
